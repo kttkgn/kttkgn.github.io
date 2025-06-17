@@ -155,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/13/AIGC%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/17/%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +169,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/05/13/AIGC%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="post-title-link" itemprop="url">AIGC工作流</a>
+            <a href="/2025/06/17/%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">数组</a>
         </h2>
 
         <div class="post-meta">
@@ -179,15 +179,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2025-05-13 10:25:31" itemprop="dateCreated datePublished" datetime="2025-05-13T10:25:31+08:00">2025-05-13</time>
+              <time title="创建时间：2025-06-17 16:58:15" itemprop="dateCreated datePublished" datetime="2025-06-17T16:58:15+08:00">2025-06-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-16 10:20:41" itemprop="dateModified" datetime="2025-05-16T10:20:41+08:00">2025-05-16</time>
-              </span>
 
           
 
@@ -200,241 +193,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="一、AI-驱动的一体化视频内容创作流程"><a href="#一、AI-驱动的一体化视频内容创作流程" class="headerlink" title="一、AI 驱动的一体化视频内容创作流程"></a>一、AI 驱动的一体化视频内容创作流程</h3><p>1、<strong>剧本创作与分镜细化：</strong><br> 借助 GPT 等大语言模型（LLM），高效完成故事脚本的生成和分镜头脚本的细化，为后续创作打下坚实基础。</p>
-<p>2、<strong>画面生成与关键帧制作：</strong><br> 使用 Midjourney、Runway 或其他图像生成类 AI 工具，根据脚本生成关键帧画面，快速构建视觉素材。</p>
-<p>3、<strong>画面动效与剪辑处理：</strong><br> 通过 Runway、Pika 等视频处理 AI 对静态关键帧进行运动转化，添加动效、过渡、镜头语言等，实现动画或实拍风格的视频剪辑。</p>
-<p>4、<strong>音乐音效自动配乐：</strong><br> 借助 Suno 等音乐生成 AI 自动生成配乐，支持风格化背景音乐及情绪变化音效，提升视听体验。</p>
-<p>5、<strong>AI 配音与声音克隆：</strong><br> 利用 GPT-SoVITS 或其他 TTS（Text-to-Speech）声音克隆模型完成智能配音，可实现特定风格、语气、人物声音的还原。</p>
-<pre class="mermaid">graph TD
-    A[剧本创作<br>GPT / Claude / Gemini] --> B[分镜脚本细化<br>GPT辅助自动生成分镜]
-    B --> C[画面生成<br>Midjourney / Runway / DALL·E]
-    C --> D[动效处理<br>Runway / Pika Labs]
-    D --> E[剪辑拼接<br>Runway / CapCut / 自动剪辑]
-    E --> F[配乐音效<br>Suno / Udio / AIVA]
-    F --> G[AI配音 / 声音克隆<br>GPT-SoVITS / Bark / XTTS]
-    G --> H[成品输出<br>发布到短视频平台 / 视频平台]
-
-    style A fill:#e6f7ff,stroke:#3399ff,stroke-width:2px
-    style B fill:#e6ffe6,stroke:#33cc33,stroke-width:2px
-    style C fill:#fff5e6,stroke:#ff9933,stroke-width:2px
-    style D fill:#fff0f5,stroke:#cc66cc,stroke-width:2px
-    style E fill:#f0f5ff,stroke:#6666ff,stroke-width:2px
-    style F fill:#f9fbe7,stroke:#c0ca33,stroke-width:2px
-    style G fill:#fce4ec,stroke:#ec407a,stroke-width:2px
-    style H fill:#d7ccc8,stroke:#6d4c41,stroke-width:2px</pre>
-
-<h3 id="二、ComfyUI"><a href="#二、ComfyUI" class="headerlink" title="二、ComfyUI"></a>二、ComfyUI</h3><p><strong>ComfyUI</strong> 是一款基于 <strong>Stable Diffusion 的节点式工作流用户界面（Node-based Workflow UI）</strong>。</p>
-<p>与传统“一键生成图片”不同，ComfyUI 更像是图形化编程，每一个 <strong>节点（Node）</strong> 表示一个处理步骤，比如：</p>
-<ul>
-<li>文本提示输入（Prompt）</li>
-<li>文本编码（CLIP Encoding）</li>
-<li>噪声采样器（Sampler）</li>
-<li>图像生成器（Latent）</li>
-<li>后处理（如图像放大、风格迁移）</li>
-</ul>
-<p>用户可以像拼积木一样 <strong>将各个节点通过连线连接起来</strong>，自由构建和可视化整个图像生成流程，甚至可以：</p>
-<ul>
-<li><p>创建 <strong>复杂的多图合成流程</strong></p>
-</li>
-<li><p>自动化生成多种风格图像</p>
-</li>
-<li><p>灵活插入自己的模型、控制模块（如 ControlNet、LoRA）</p>
-</li>
-</ul>
-<p>节点的本质（通俗解释）</p>
-<p>可以把每个节点理解为一个“模块”或“函数”：</p>
-<ul>
-<li>节点有输入接口（如：prompt文本、图像、参数）</li>
-<li>有输出接口（如：生成的图像、处理结果）</li>
-<li>每个节点完成一个功能，多个节点组成一个完整流程</li>
-</ul>
-<pre class="mermaid">graph TD
-    A[Prompt 输入] --> B[CLIP 编码]
-    B --> C[UNet 推理 / Sampler]
-    C --> D[图像解码]
-    D --> E[图像后处理]</pre>
-
-
-
-<h3 id="🎨-图像生成增强类"><a href="#🎨-图像生成增强类" class="headerlink" title="🎨 图像生成增强类"></a>🎨 图像生成增强类</h3><table>
-<thead>
-<tr>
-<th>插件名称</th>
-<th>功能简介</th>
-<th>地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>ComfyUI-Manager</strong></td>
-<td>插件管理器，支持一键安装&#x2F;更新插件</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/ltdrdata/ComfyUI-Manager">https://github.com/ltdrdata/ComfyUI-Manager</a></td>
-</tr>
-<tr>
-<td><strong>ComfyUI-Advanced-ControlNet</strong></td>
-<td>支持多个 ControlNet 管道、姿势图&#x2F;深度图等控制</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/Fannovel16/ComfyUI-Advanced-ControlNet">https://github.com/Fannovel16/ComfyUI-Advanced-ControlNet</a></td>
-</tr>
-<tr>
-<td><strong>ComfyUI-Custom-Scripts</strong></td>
-<td>提供图像增强&#x2F;LoRA注入&#x2F;随机提示词组合等节点</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/Fannovel16/comfyui_custom_nodes">https://github.com/Fannovel16/comfyui_custom_nodes</a></td>
-</tr>
-<tr>
-<td><strong>ComfyUI-WD14-Tagger</strong></td>
-<td>对图片进行自动打标签（适合训练 LoRA）</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/toriato/ComfyUI-WD14-Tagger">https://github.com/toriato/ComfyUI-WD14-Tagger</a></td>
-</tr>
-<tr>
-<td><strong>ComfyUI-Impact-Pack</strong></td>
-<td>多个实用节点合集（种子控制、图像混合等）</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/ltdrdata/ComfyUI-Impact-Pack">https://github.com/ltdrdata/ComfyUI-Impact-Pack</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="🧠-模型管理-训练辅助类"><a href="#🧠-模型管理-训练辅助类" class="headerlink" title="🧠 模型管理&#x2F;训练辅助类"></a>🧠 模型管理&#x2F;训练辅助类</h3><table>
-<thead>
-<tr>
-<th>插件名称</th>
-<th>功能简介</th>
-<th>地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>ComfyUI-LoRA Loader</strong></td>
-<td>自动加载 LoRA，支持权重调整</td>
-<td>已集成在很多 Pack 中</td>
-</tr>
-<tr>
-<td><strong>ComfyUI-TrainingTools</strong></td>
-<td>实现简单的 DreamBooth&#x2F;LoRA 训练流程</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/kohya-ss/ComfyUI-Training-Tools">https://github.com/kohya-ss/ComfyUI-Training-Tools</a></td>
-</tr>
-<tr>
-<td><strong>ComfyUI-MagicPrompt</strong></td>
-<td>利用 AI 自动生成增强 prompt</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/Fannovel16/comfyui-magicprompt">https://github.com/Fannovel16/comfyui-magicprompt</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="🎥-视频-动画类（结合-Pika-Runway）"><a href="#🎥-视频-动画类（结合-Pika-Runway）" class="headerlink" title="🎥 视频&#x2F;动画类（结合 Pika &#x2F; Runway）"></a>🎥 视频&#x2F;动画类（结合 Pika &#x2F; Runway）</h3><table>
-<thead>
-<tr>
-<th>插件名称</th>
-<th>功能简介</th>
-<th>地址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>ComfyUI-VideoHelperSuite</strong></td>
-<td>处理帧序列、生成视频、插帧等</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite">https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite</a></td>
-</tr>
-<tr>
-<td><strong>ComfyUI-Render-Queue</strong></td>
-<td>批量渲染任务队列系统，适合视频逐帧合成</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/Kosinkadink/ComfyUI-Render-Queue">https://github.com/Kosinkadink/ComfyUI-Render-Queue</a></td>
-</tr>
-<tr>
-<td><strong>ComfyUI-EasyAnimate</strong></td>
-<td>简化动画处理流程，支持帧过渡插值</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/Fannovel16/ComfyUI-Easy-Animate">https://github.com/Fannovel16/ComfyUI-Easy-Animate</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="📦-插件管理推荐（强烈建议先装这个）"><a href="#📦-插件管理推荐（强烈建议先装这个）" class="headerlink" title="📦 插件管理推荐（强烈建议先装这个）"></a>📦 插件管理推荐（强烈建议先装这个）</h3><h4 id="✅-ComfyUI-Manager"><a href="#✅-ComfyUI-Manager" class="headerlink" title="✅ ComfyUI-Manager"></a>✅ <a target="_blank" rel="noopener" href="https://github.com/ltdrdata/ComfyUI-Manager">ComfyUI-Manager</a></h4><ul>
-<li>功能：一键查看、安装、更新、禁用插件</li>
-<li>安装：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/ltdrdata/ComfyUI-Manager</span><br><span class="line">cd ComfyUI-Manager</span><br><span class="line">python install.py</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装后会在界面左上角出现一个「Manager」按钮</li>
-</ul>
-<hr>
-<h2 id="🧩-插件安装方式通用步骤："><a href="#🧩-插件安装方式通用步骤：" class="headerlink" title="🧩 插件安装方式通用步骤："></a>🧩 插件安装方式通用步骤：</h2><ol>
-<li><p><strong>找到插件 GitHub 地址</strong></p>
-</li>
-<li><p>克隆到 ComfyUI 的 <code>custom_nodes</code> 文件夹下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">复制编辑</span><br><span class="line">cd ComfyUI/custom_nodes</span><br><span class="line">git clone 插件地址</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启 ComfyUI（或使用 Manager 插件自动操作）</p>
-</li>
-</ol>
-<hr>
-<h2 id="🔧-进阶玩法"><a href="#🔧-进阶玩法" class="headerlink" title="🔧 进阶玩法"></a>🔧 进阶玩法</h2><ul>
-<li>使用 <strong>自定义节点 + API</strong> 实现全自动图生图 &#x2F; 文生图</li>
-<li>结合 <strong>ChatGPT 自动写 Prompt → 调用 ComfyUI 渲染图像</strong></li>
-<li>配合 <strong>LoRA、ControlNet、动画插件</strong> 生成多镜头动态视频</li>
-<li>脚本触发：通过 <code>workflow_api.py</code> 调用本地流程并返回图像</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/12/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kttkgn">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kttkgn">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2025/05/12/test/" class="post-title-link" itemprop="url">test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-05-12 19:14:23" itemprop="dateCreated datePublished" datetime="2025-05-12T19:14:23+08:00">2025-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-14 15:20:45" itemprop="dateModified" datetime="2025-05-14T15:20:45+08:00">2025-05-14</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/../images/a.png" alt="test"></p>
-<p>test</p>
-<p>Test</p>
-
       
     </div>
 
@@ -515,15 +274,9 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
