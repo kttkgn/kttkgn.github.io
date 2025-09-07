@@ -4,18 +4,16 @@
     <title>hello</title>
     <url>/2025/09/07/hello/</url>
     <content><![CDATA[1. 段落与强调
-正文写在这里，加粗、斜体、行内代码 都支持。
+正文写在这里，加粗、斜体、行内代码
+都支持。
 2. 图片
-① 本地图（推荐）
-
+① 本地图（推荐） 
 3. 牛宫格
 
 (function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"video":{"url":"/upload/aka.mp4","pic":"/upload/base.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()
 Write LaTeX in Markdown:
-$$
-E = mc^2
-$$
-Another example with inline math: $E = mc^2$.
+E = mc2
+Another example with inline math: E = mc2.
 A more complex equation:
 $$
 \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
@@ -23,8 +21,8 @@ $$
 A matrix example:
 $$
 \begin{pmatrix}
-a &amp; b \
-c &amp; d
+  a &amp; b \\
+  c &amp; d
 \end{pmatrix}
 $$
 4. 代码块
