@@ -1,27 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2025/09/06/hello-world/</url>
-    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+    <title>hello</title>
+    <url>/2025/09/07/hello/</url>
+    <content><![CDATA[1. 段落与强调
+正文写在这里，加粗、斜体、行内代码 都支持。
+2. 图片
+① 本地图（推荐）
 
-More info: Writing
-Run server$ hexo server
+3. 牛宫格
 
-More info: Server
-Generate static files$ hexo generate
+(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"video":{"url":"/upload/aka.mp4","pic":"/upload/base.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()
+Write LaTeX in Markdown:
+$$
+E = mc^2
+$$
+Another example with inline math: $E = mc^2$.
+A more complex equation:
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+A matrix example:
+$$
+\begin{pmatrix}
+a &amp; b \
+c &amp; d
+\end{pmatrix}
+$$
+4. 代码块
+console.log(&#x27;Hello Hexo!&#x27;);
 
-More info: Generating
-Deploy to remote sites$ hexo deploy
 
-More info: Deployment
+
+graph TD
+    A[开始] -->|是| B(处理)
+    B --> C{判断}
+    C -->|真| D[结束]
+    C -->|假| E[回滚]
+    E --> B
+
+
+
+
+
+sequenceDiagram
+    participant 用户
+    participant 服务器
+    用户->>服务器: 登录请求
+    服务器-->>用户: 返回 Token
+    loop 每 5 min
+        用户->>服务器: 心跳
+    end
+
+
+
+
+
+gantt
+    title 项目计划
+    dateFormat  YYYY-MM-DD
+    section 设计
+    需求分析        :done,    des1, 2022-01-01, 3d
+    UI 设计         :active,  des2, after des1, 5d
+    section 开发
+    前端            :         dev1, after des2, 8d
+    后端            :         dev2, after des2, 6d
+
+
+
+
+
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER {
+        string name PK
+        string tel UK
+        int age
+    }
+
+
+
+
+
+classDiagram
+    class Animal {
+        +int age
+        +String name
+        +isMammal()
+    }
+    class Dog {
+        +bark()
+    }
+    Animal  空闲
+    空闲 --> 运行: 启动
+    运行 --> 暂停: 暂停
+    暂停 --> 运行: 继续
+    运行 --> [*]: 停止
+
+
+
+
+
+journey
+    title 购买旅程
+    section 浏览
+      进入首页: 5: 用户
+      搜索商品: 4: 用户
+    section 下单
+      加入购物车: 5: 用户
+      支付: 3: 用户
+
+
+
+
+
+pie title 市场份额
+    "苹果" : 45
+    "三星" : 25
+    "小米" : 15
+    "其他" : 15
+
+
 ]]></content>
       <categories>
-        <category>niu</category>
+        <category>hah</category>
       </categories>
       <tags>
-        <tag>haha</tag>
+        <tag>niu</tag>
       </tags>
   </entry>
 </search>
